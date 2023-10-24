@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body
+    style="
+      background: rgb(2, 0, 36);
+      background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(9, 9, 121, 0.5746673669467788) 43%,
+        rgba(0, 212, 255, 1) 100%
+      );
+    "
+  >
+    <div
+      class="side"
+      style="
+        color: aliceblue;
+        font-size: 30px;
+        position: absolute;
+        top: 200px;
+        left: 40px;
+      "
+    >
+      <p class="top-side">
+        <span>Top:</span>
+        <span id="sideTop_fls">0</span>
+      </p>
+
+      <p class="mid-side">
+        <span>Mid:</span>
+        <span id="sideMid_fls">0</span>
+      </p>
+
+      <p class="ad-side">
+        <span>Ad:</span>
+        <span id="sideAd_fls">0</span>
+      </p>
+
+      <p class="sp-side">
+        <span>Sp:</span>
+        <span id="sideSp_fls">0</span>
+      </p>
+
+      <p class="jungle-side">
+        <span>Jungle:</span>
+        <span id="sideJg_fls">0</span>
+      </p>
+    </div>
+    <div class="element">
+      <div class="background" style="background-image: url(SummonerMap.png)">
+        <div class="top">
+          <button id="countdown-top">
+            <img src="Flash.png" id="image-top" alt="buttonpng" />
+            <div id="countdown-top_vision"></div>
+          </button>
+        </div>
+
+        <div class="mid">
+          <button id="countdown-mid">
+            <img src="Flash.png" id="image-mid" alt="buttonpng" />
+
+            <div id="countdown-mid_vision"></div>
+          </button>
+        </div>
+
+        <div class="ad">
+          <button id="countdown-ad" type="submit">
+            <img src="Flash.png" id="image-ad" alt="buttonpng" />
+            <div id="countdown-ad_vision"></div>
+          </button>
+        </div>
+
+        <div class="sp">
+          <button id="countdown-sp">
+            <img src="Flash.png" id="image-sp" alt="buttonpng" />
+            <div id="countdown-sp_vision"></div>
+          </button>
+        </div>
+
+        <div class="jungle">
+          <button id="countdown-jg">
+            <img src="Flash.png" id="image-jg" alt="buttonpng" />
+            <div id="countdown-jg_vision"></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const countdownButton_top = document.getElementById("countdown-top");
+    const countdownDisplay_top = document.getElementById(
+      "countdown-top_vision"
+    );
+    const sideDisplay_top = document.getElementById("sideTop_fls");
+    const sideDisplay_Mid = document.getElementById("sideMid_fls");
+    const sideDisplay_Ad = document.getElementById("sideAd_fls");
+    const sideDisplay_Sp = document.getElementById("sideSp_fls");
+    const sideDisplay_Jg = document.getElementById("sideJg_fls");
+    const img_top = document.getElementById("image-top");
+
+    const countdownButton_jg = document.getElementById("countdown-jg");
+    const countdownDisplay_jg = document.getElementById("countdown-jg_vision");
+    const img_jg = document.getElementById("image-jg");
+
+    const countdownButton_ad = document.getElementById("countdown-ad");
+    const countdownDisplay_ad = document.getElementById("countdown-ad_vision");
+    const img_ad = document.getElementById("image-ad");
+
+    const countdownButton_mid = document.getElementById("countdown-mid");
+    const countdownDisplay_mid = document.getElementById(
+      "countdown-mid_vision"
+    );
+    const img_mid = document.getElementById("image-mid");
+
+    const countdownButton_sp = document.getElementById("countdown-sp");
+    const countdownDisplay_sp = document.getElementById("countdown-sp_vision");
+    const img_sp = document.getElementById("image-sp");
+
+    function startCountdown(element, displayElement, imgElement, side) {
+      imgElement.style.opacity = 0.5;
+      element.disabled = true;
+      let time = 3; // 5 phút
+      displayElement.innerHTML = time;
+
+      const countdownInterval = setInterval(function () {
+        time--;
+        displayElement.innerHTML = time;
+        side.innerHTML = time;
+        console.log(time);
+        if (time === 0) {
+          displayElement.innerHTML = "";
+          side.innerHTML = 0;
+          element.disabled = false;
+          imgElement.style.opacity = 1;
+          clearInterval(countdownInterval);
+        }
+      }, 1000); // Cứ mỗi giây cập nhật thời gian
+    }
+
+    // Top
+    countdownButton_top.addEventListener("click", function () {
+      startCountdown(
+        countdownButton_top,
+        countdownDisplay_top,
+        img_top,
+        sideTop_fls
+      );
+    });
+
+    // Jungle
+    countdownButton_jg.addEventListener("click", function () {
+      startCountdown(
+        countdownButton_jg,
+        countdownDisplay_jg,
+        img_jg,
+        sideDisplay_Jg
+      );
+    });
+    // Mid
+    countdownButton_mid.addEventListener("click", function () {
+      startCountdown(
+        countdownButton_mid,
+        countdownDisplay_mid,
+        img_mid,
+        sideDisplay_Mid
+      );
+    });
+
+    // Sp
+    countdownButton_sp.addEventListener("click", function () {
+      startCountdown(
+        countdownButton_sp,
+        countdownDisplay_sp,
+        img_sp,
+        sideDisplay_Sp
+      );
+    });
+
+    // Ad
+    countdownButton_ad.addEventListener("click", function () {
+      startCountdown(
+        countdownButton_ad,
+        countdownDisplay_ad,
+        img_ad,
+        sideDisplay_Ad
+      );
+    });
+  </script>
+</html>

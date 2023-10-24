@@ -1,0 +1,127 @@
+.background {
+  position: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 1500px;
+  width: 2900px;
+}
+.e {
+  margin: 20px;
+}
+button {
+  background-color: transparent !important ;
+  color: transparent !important;
+
+  overflow: hidden;
+  outline: none;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+#countdown-top_vision {
+  border-color: 20px solid #333;
+  z-index: 1000;
+}
+.image-button {
+  background: url("Flash.png");
+  background-repeat: no-repeat; /* Ngăn lặp lại hình ảnh */
+  border: none; /* Loại bỏ viền */
+}
+.top {
+  position: absolute;
+  top: 250px;
+  left: 800px;
+  z-index: 1000;
+}
+#image-top {
+  width: 60px;
+}
+#countdown-top_vision {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 99999999;
+  font-size: 20px;
+  color: aliceblue;
+}
+#countdown-mid_vision {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 99999999;
+  font-size: 20px;
+  color: aliceblue;
+}
+.mid {
+  position: absolute;
+  top: 750px;
+  left: 1420px;
+  z-index: 1000;
+}
+
+#image-mid {
+  width: 60px;
+}
+.ad {
+  position: absolute;
+  top: 1360px;
+  left: 1920px;
+  z-index: 1000;
+}
+#image-ad {
+  width: 60px;
+}
+.sp {
+  position: absolute;
+  top: 1160px;
+  left: 1920px;
+  z-index: 1000;
+}
+#image-sp {
+  width: 60px;
+}
+
+.jungle {
+  position: absolute;
+  top: 1080px;
+  left: 1420px;
+  z-index: 1000;
+}
+#image-jg {
+  width: 60px;
+}
+
+#countdown-ad_vision {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 99999999;
+  font-size: 20px;
+  color: aliceblue;
+}
+#countdown-sp_vision {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 99999999;
+  font-size: 20px;
+  color: aliceblue;
+}
+#countdown-jg_vision {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 99999999;
+  font-size: 20px;
+  color: aliceblue;
+}
