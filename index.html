@@ -22,6 +22,7 @@
         position: absolute;
         top: 200px;
         left: 40px;
+        z-index: 1001;
       "
     >
       <p class="top-side">
@@ -120,17 +121,28 @@
     const countdownDisplay_sp = document.getElementById("countdown-sp_vision");
     const img_sp = document.getElementById("image-sp");
 
+    function secondsToMinutesAndSeconds(seconds) {
+      // Tính phút và giây
+      var minutes = Math.floor(seconds / 60);
+      var remainingSeconds = seconds % 60;
+      var timeString;
+      if (seconds < 60) {
+        timeString = remainingSeconds;
+      } else {
+        // Định dạng chuỗi phút và giây
+        timeString = minutes + ":" + remainingSeconds;
+      }
+
+      return timeString;
+    }
     function startCountdown(element, displayElement, imgElement, side) {
       imgElement.style.opacity = 0.5;
       element.disabled = true;
-      let time = 3; // 5 phút
-      displayElement.innerHTML = time;
-
+      let time = 300; // 5 phút
       const countdownInterval = setInterval(function () {
-        time--;
-        displayElement.innerHTML = time;
-        side.innerHTML = time;
-        console.log(time);
+        displayElement.innerHTML = secondsToMinutesAndSeconds(time);
+        side.innerHTML = secondsToMinutesAndSeconds(time);
+
         if (time === 0) {
           displayElement.innerHTML = "";
           side.innerHTML = 0;
@@ -138,6 +150,7 @@
           imgElement.style.opacity = 1;
           clearInterval(countdownInterval);
         }
+        time--;
       }, 1000); // Cứ mỗi giây cập nhật thời gian
     }
 

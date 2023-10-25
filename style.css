@@ -1,9 +1,17 @@
 .background {
   position: fixed;
   background-repeat: no-repeat;
-  background-position: center center;
-  height: 1500px;
-  width: 2900px;
+  background-position: center;
+  max-width: 100%;
+  max-height: 100%;
+  width: 1922px;
+  height: 1080px;
+  overflow: hidden;
+  background-size: 100% 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: contain;
 }
 .e {
   margin: 20px;
@@ -14,9 +22,10 @@ button {
 
   overflow: hidden;
   outline: none;
-  background-color: Transparent;
+  background-color: Transparent !important;
   background-repeat: no-repeat;
   cursor: pointer;
+  border-style: transparent !important;
 }
 #countdown-top_vision {
   border-color: 20px solid #333;
@@ -29,16 +38,16 @@ button {
 }
 .top {
   position: absolute;
-  top: 250px;
-  left: 800px;
+  top: 153px;
+  left: 604px;
   z-index: 1000;
 }
 #image-top {
-  width: 60px;
+  width: 30px;
 }
 #countdown-top_vision {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translateX(-50%);
 
@@ -48,7 +57,7 @@ button {
 }
 #countdown-mid_vision {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translateX(-50%);
 
@@ -58,22 +67,22 @@ button {
 }
 .mid {
   position: absolute;
-  top: 750px;
-  left: 1420px;
+  top: 470px;
+  left: 930px;
   z-index: 1000;
 }
 
 #image-mid {
-  width: 60px;
+  width: 30px;
 }
 .ad {
   position: absolute;
-  top: 1360px;
-  left: 1920px;
+  top: 779px;
+  left: 1208px;
   z-index: 1000;
 }
 #image-ad {
-  width: 60px;
+  width: 30px;
 }
 .sp {
   position: absolute;
@@ -82,22 +91,21 @@ button {
   z-index: 1000;
 }
 #image-sp {
-  width: 60px;
+  width: 30px;
 }
-
 .jungle {
   position: absolute;
-  top: 1080px;
-  left: 1420px;
+  top: 640px;
+  left: 986px;
   z-index: 1000;
 }
 #image-jg {
-  width: 60px;
+  width: 30px;
 }
 
 #countdown-ad_vision {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translateX(-50%);
 
@@ -107,7 +115,7 @@ button {
 }
 #countdown-sp_vision {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translateX(-50%);
 
@@ -117,7 +125,7 @@ button {
 }
 #countdown-jg_vision {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translateX(-50%);
 
