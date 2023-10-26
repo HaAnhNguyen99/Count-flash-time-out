@@ -70,7 +70,6 @@ if (!document.hidden) {
       displayElement.innerHTML = timeString;
       side.innerHTML = timeString;
 
-      console.log(remainingTime);
       if (remainingTime > 0) {
         requestAnimationFrame(updateCountdown); // Cập nhật lại mỗi frame
       } else {
