@@ -1,3 +1,6 @@
+.element {
+  position: relative;
+}
 .background {
   position: fixed;
   background-repeat: no-repeat;
