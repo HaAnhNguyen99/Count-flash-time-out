@@ -24,42 +24,33 @@ if (!document.hidden) {
   const countdownDisplay_sp = document.getElementById("countdown-sp_vision");
   const img_sp = document.getElementById("image-sp");
 
-  function performance_trick() {
-    if (sounds.empty) return sounds.empty.play();
-    sounds.empty = new Howl({
-      src: [
-        "/sounds/loops/empty_loop_for_js_performance.ogg",
-        "/sounds/loops/empty_loop_for_js_performance.wav",
-      ],
-      volume: 0.5,
-      autoplay: true,
-      loop: true,
-    });
-  }
+  //setting
+  let reqAnim_top, reqAnim_jg, reqAnim_mid, reqAnim_ad, reqAnim_sp;
+  var Config = {
+    IsCouting_Top: false,
+    IsCouting_Jg: false,
+    IsCouting_Mid: false,
+    IsCouting_Ad: false,
+    IsCouting_Sp: false,
+  };
 
-  function secondsToMinutesAndSeconds(seconds) {
-    // Tính phút và giây
-    var minutes = Math.floor(seconds / 60);
-    var remainingSeconds = seconds % 60;
-    var timeString;
-    if (seconds < 60) {
-      timeString = remainingSeconds;
-    } else {
-      // Định dạng chuỗi phút và giây
-      timeString = minutes + ":" + remainingSeconds;
-    }
-
-    return timeString;
-  }
-
-  function startCountdown(element, displayElement, imgElement, side) {
+  function startCountdown(
+    nameReq,
+    count,
+    element,
+    displayElement,
+    imgElement,
+    side
+  ) {
     let startTime = Date.now();
+
     durationInMinutes = 5;
+    Config[count] = !Config[count];
 
     function updateCountdown() {
       let currentTime = Date.now();
       imgElement.style.opacity = 0.5;
-      element.disabled = true;
+      element.opacity = 0.5;
       let elapsedTime = (currentTime - startTime) / 1000; // Chuyển đổi sang giây
       let remainingTime = durationInMinutes * 60 - Math.floor(elapsedTime);
 
@@ -71,42 +62,33 @@ if (!document.hidden) {
       side.innerHTML = timeString;
 
       if (remainingTime > 0) {
-        requestAnimationFrame(updateCountdown); // Cập nhật lại mỗi frame
+        nameReq = requestAnimationFrame(updateCountdown); // Cập nhật lại mỗi frame
       } else {
+        Config[count] = !Config[count];
         remainingTime = 0;
         displayElement.innerHTML = "";
         side.innerHTML = 0;
-        element.disabled = false;
+        element.opacity = 1;
         imgElement.style.opacity = 1;
       }
     }
-
-    updateCountdown();
+    if (Config[count]) {
+      updateCountdown();
+    } else {
+      window.cancelAnimationFrame(nameReq);
+      displayElement.innerHTML = "";
+      side.innerHTML = "0";
+      element.opacity = 1;
+      imgElement.style.opacity = 1;
+    }
   }
 
-  // function startCountdown(element, displayElement, imgElement, side) {
-  //   imgElement.style.opacity = 0.5;
-  //   element.disabled = true;
-  //   let time = 300; // 5 phút
-  //   const countdownInterval = setInterval(function () {
-  //     displayElement.innerHTML = secondsToMinutesAndSeconds(time);
-  //     side.innerHTML = secondsToMinutesAndSeconds(time);
-
-  //     if (time === 0) {
-  //       displayElement.innerHTML = "";
-  //       side.innerHTML = 0;
-  //       element.disabled = false;
-  //       imgElement.style.opacity = 1;
-  //       clearInterval(countdownInterval);
-  //     }
-  //     time--;
-  //     performance_trick();
-  //   }, 1000); // Cứ mỗi giây cập nhật thời gian
-  // }
-
   // Top
+
   countdownButton_top.addEventListener("click", function () {
     startCountdown(
+      reqAnim_top,
+      "IsCouting_Top",
       countdownButton_top,
       countdownDisplay_top,
       img_top,
@@ -117,6 +99,8 @@ if (!document.hidden) {
   // Jungle
   countdownButton_jg.addEventListener("click", function () {
     startCountdown(
+      reqAnim_jg,
+      "IsCouting_Jg",
       countdownButton_jg,
       countdownDisplay_jg,
       img_jg,
@@ -126,6 +110,8 @@ if (!document.hidden) {
   // Mid
   countdownButton_mid.addEventListener("click", function () {
     startCountdown(
+      reqAnim_mid,
+      "IsCouting_Mid",
       countdownButton_mid,
       countdownDisplay_mid,
       img_mid,
@@ -136,6 +122,8 @@ if (!document.hidden) {
   // Sp
   countdownButton_sp.addEventListener("click", function () {
     startCountdown(
+      reqAnim_sp,
+      "IsCouting_Sp",
       countdownButton_sp,
       countdownDisplay_sp,
       img_sp,
@@ -146,6 +134,8 @@ if (!document.hidden) {
   // Ad
   countdownButton_ad.addEventListener("click", function () {
     startCountdown(
+      reqAnim_ad,
+      "IsCouting_Ad",
       countdownButton_ad,
       countdownDisplay_ad,
       img_ad,
