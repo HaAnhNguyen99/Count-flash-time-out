@@ -142,4 +142,63 @@ if (!document.hidden) {
       sideDisplay_Ad
     );
   });
+
+  document.addEventListener("keydown", function (event) {
+    // Kiểm tra nếu phím bấm là F1 (keyCode 112) hoặc (key === "F1" cho phiên bản hiện đại hơn)
+    switch (event.key) {
+      case "4":
+        startCountdown(
+          reqAnim_top,
+          "IsCouting_Top",
+          countdownButton_top,
+          countdownDisplay_top,
+          img_top,
+          sideTop_fls
+        );
+        break;
+      case "6":
+        startCountdown(
+          reqAnim_jg,
+          "IsCouting_Jg",
+          countdownButton_jg,
+          countdownDisplay_jg,
+          img_jg,
+          sideDisplay_Jg
+        );
+        break;
+
+      case "5":
+        startCountdown(
+          reqAnim_mid,
+          "IsCouting_Mid",
+          countdownButton_mid,
+          countdownDisplay_mid,
+          img_mid,
+          sideDisplay_Mid
+        );
+        break;
+
+      case "2":
+        startCountdown(
+          reqAnim_ad,
+          "IsCouting_Ad",
+          countdownButton_ad,
+          countdownDisplay_ad,
+          img_ad,
+          sideDisplay_Ad
+        );
+        break;
+
+      case "3":
+        startCountdown(
+          reqAnim_sp,
+          "IsCouting_Sp",
+          countdownButton_sp,
+          countdownDisplay_sp,
+          img_sp,
+          sideDisplay_Sp
+        );
+        break;
+    }
+  });
 }

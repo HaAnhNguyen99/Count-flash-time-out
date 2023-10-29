@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body
+    style="
+      background: rgb(2, 0, 36);
+      background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(9, 9, 121, 0.5746673669467788) 43%,
+        rgba(0, 212, 255, 1) 100%
+      );
+    "
+  >
+    <div
+      class="side"
+      style="
+        color: aliceblue;
+        font-size: 30px;
+        position: absolute;
+        top: 200px;
+        left: 40px;
+        z-index: 1001;
+      "
+    >
+      <p class="top-side">
+        <span>(4) - Top:</span>
+        <span id="sideTop_fls">0</span>
+      </p>
+
+      <p class="mid-side">
+        <span>(5) - Mid:</span>
+        <span id="sideMid_fls">0</span>
+      </p>
+
+      <p class="ad-side">
+        <span>(2) - Ad:</span>
+        <span id="sideAd_fls">0</span>
+      </p>
+
+      <p class="sp-side">
+        <span>(3) - Sp:</span>
+        <span id="sideSp_fls">0</span>
+      </p>
+
+      <p class="jungle-side">
+        <span>(6) - Jungle:</span>
+        <span id="sideJg_fls">0</span>
+      </p>
+    </div>
+    <div class="element">
+      <div class="background" style="background-image: url(SummonerMap.png)">
+        <div class="top">
+          <button id="countdown-top">
+            <img src="Flash.png" id="image-top" alt="buttonpng" />
+            <div id="countdown-top_vision"></div>
+          </button>
+        </div>
+
+        <div class="mid">
+          <button id="countdown-mid">
+            <img src="Flash.png" id="image-mid" alt="buttonpng" />
+
+            <div id="countdown-mid_vision"></div>
+          </button>
+        </div>
+
+        <div class="ad">
+          <button id="countdown-ad" type="submit">
+            <img src="Flash.png" id="image-ad" alt="buttonpng" />
+            <div id="countdown-ad_vision"></div>
+          </button>
+        </div>
+
+        <div class="sp">
+          <button id="countdown-sp">
+            <img src="Flash.png" id="image-sp" alt="buttonpng" />
+            <div id="countdown-sp_vision"></div>
+          </button>
+        </div>
+
+        <div class="jungle">
+          <button id="countdown-jg">
+            <img src="Flash.png" id="image-jg" alt="buttonpng" />
+            <div id="countdown-jg_vision"></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="script.js"></script>
+</html>
